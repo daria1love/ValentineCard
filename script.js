@@ -1,13 +1,6 @@
 const container = document.querySelectorAll('li');
 const massElements = [...container];
 
-// fetch('file.php')
-//     .then(response => response.json())
-//     .then(data => {
-//         console.log(data);
-//     })
-//     .catch(error => console.error('Ошибка при получении файлов: ', error));
-
 const audioList = [
     "BOOKER, МУККА, pyrokinesis - Некуда бежать.mp3",
     "Linkin_Park_-_Leave_Out_All_The_Rest_47958369.mp3",
@@ -30,6 +23,7 @@ const audioList = [
     "МУККА - Химия.mp3"
 ];
 
+//'You are the reason my world', 'is full of laughter and joy.', 'Happy Valentine’s Day, my heart'
 const listenedToSong = [];
 
 const ClearMass = (audioList) => {
@@ -42,7 +36,6 @@ const RandomSong = (audioList) => {
     ClearMass(listenedToSong, audioList);
     let randomNumb = Math.floor(Math.random() * (audioList.length - 1));
     if (!(listenedToSong.find((el) => el == randomNumb))) {
-        console.log(randomNumb);
         listenedToSong.push(randomNumb);
         return audioList[randomNumb];
     }
@@ -61,4 +54,5 @@ const PlaySong = (audioList) => {
 
 const audio = new Audio();
 PlaySong(audioList);
+
 
